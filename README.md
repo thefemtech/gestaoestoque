@@ -2,8 +2,11 @@
 Software de Gestão de Estoque de jogos para o piloto do Challenge DevTools
 
 ## Funcionalidade: Gestão de Estoque (Jogos)
+
 Como Vendedor de Jogos
+
 Eu quero efetuar a gestão de estoque dos jogos
+
 Para que eu possa controlar as minhas vendas online
 
 ### Cenário 1: Cadastro de Jogos
