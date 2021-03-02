@@ -30,11 +30,13 @@ public class EstoqueController {
 	}
 	
 	@RequestMapping(value="/jogo", method=RequestMethod.GET)
-	@ResponseBody
+	//@ResponseBody
 	public ResponseEntity<?> teste(){
 		String teste = "hello";
 		return ResponseEntity.ok(teste);
 	}
+	
+	
 	
 
 }
