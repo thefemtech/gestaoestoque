@@ -6,4 +6,6 @@ import gestaoestoque.thefemtech.com.br.model.Jogo;
 
 public interface JogoRepository extends CrudRepository<Jogo, Integer>{
 
+	void save(int id);
+
 }
