@@ -39,7 +39,7 @@ public class EstoqueController {
 		return ResponseEntity.ok(teste);
 	}
 
-	@DeleteMapping(value = "/jogo/id/quantidadeEstoque")
+	@DeleteMapping(value = "/jogo/{id}/{quantidadeEstoque}")
 	public ResponseEntity<?> deleteJogo(@PathVariable int id, @PathVariable int quantidadeEstoque) {
 		try {
 			Optional<Jogo> jogo = jogoRepository.findById(id);
