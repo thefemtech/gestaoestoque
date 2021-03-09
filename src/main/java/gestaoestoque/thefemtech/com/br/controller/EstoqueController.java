@@ -39,13 +39,13 @@ public class EstoqueController {
 		return ResponseEntity.ok(teste);
 	}
 
-	@DeleteMapping(value = "/jogo/{id}/{quantidadeEstoque}")
+	@DeleteMapping(value = "/jogo/id/quantidadeEstoque")
 	public ResponseEntity<?> deleteJogo(@PathVariable int id, @PathVariable int quantidadeEstoque) {
 		try {
 			Optional<Jogo> jogo = jogoRepository.findById(id);
 			jogo.get().setQuantidadeEstoque((int) (jogo.get().getQuantidadeEstoque()- quantidadeEstoque));
 			jogoRepository.save(jogo.get());
-			return ResponseEntity.ok(quantidadeEstoque);
+			return ResponseEntity.ok().build();
 		} catch (Exception ex) {
 			return ResponseEntity.badRequest().build();
 		}
