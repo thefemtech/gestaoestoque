@@ -45,7 +45,7 @@ public class EstoqueController {
 			Optional<Jogo> jogo = jogoRepository.findById(id);
 			jogo.get().setQuantidadeEstoque((int) (jogo.get().getQuantidadeEstoque()- quantidadeEstoque));
 			jogoRepository.save(jogo.get());
-			return ResponseEntity.ok().build();
+			return ResponseEntity.ok(quantidadeEstoque);
 		} catch (Exception ex) {
 			return ResponseEntity.badRequest().build();
 		}
