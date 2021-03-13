@@ -24,23 +24,23 @@ public class EstoqueController {
 	@Autowired
 	JogoRepository jogoRepository;
 
-//	@RequestMapping(value = "/jogo", method = RequestMethod.POST)
-//	@ResponseBody
-//	public ResponseEntity<?> cadastrarJogo(@RequestBody Jogo jogo) {
-//		try {
-//			jogoRepository.save(jogo);
-//			return ResponseEntity.created(null).build();
-//		} catch (Exception ex) {
-//			return ResponseEntity.badRequest().build();
-//		}
-//	}
-
-	@RequestMapping(value = "/jogo", method = RequestMethod.GET)
+	@RequestMapping(value = "/jogo", method = RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity<?> teste() {
-		String teste = "hello";
-		return ResponseEntity.ok(teste);
+	public ResponseEntity<?> cadastrarJogo(@RequestBody Jogo jogo) {
+		try {
+			jogoRepository.save(jogo);
+			return ResponseEntity.created(null).build();
+		} catch (Exception ex) {
+			return ResponseEntity.badRequest().build();
+		}
 	}
+
+//	@RequestMapping(value = "/jogo", method = RequestMethod.GET)
+//	@ResponseBody
+//	public ResponseEntity<?> teste() {
+//		String teste = "hello";
+//		return ResponseEntity.ok(teste);
+//	}
 
 	@DeleteMapping(value = "/jogo/{id}/{quantidadeEstoque}")
 	public ResponseEntity<?> deleteJogo(@PathVariable int id, @PathVariable int quantidadeEstoque) {
@@ -54,21 +54,21 @@ public class EstoqueController {
 		}
 	}
 	
-	public ResponseEntity<?> cadastrarJogo(@RequestBody Jogo jogo) {
-		try {
-			jogoRepository.save(jogo);
-
-			return new ResponseEntity<>(
-				jogo, 
-				HttpStatus.CREATED
-			);
-		} catch (Exception ex) {
-			return new ResponseEntity<>(
-				ex.getMessage(),
-				HttpStatus.BAD_REQUEST
-			);
-		}
-	}
+//	public ResponseEntity<?> cadastrarJogo(@RequestBody Jogo jogo) {
+//		try {
+//			jogoRepository.save(jogo);
+//
+//			return new ResponseEntity<>(
+//				jogo, 
+//				HttpStatus.CREATED
+//			);
+//		} catch (Exception ex) {
+//			return new ResponseEntity<>(
+//				ex.getMessage(),
+//				HttpStatus.BAD_REQUEST
+//			);
+//		}
+//	}
 
 	@RequestMapping(value = "/jogo/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> getById(@PathVariable int id) {
