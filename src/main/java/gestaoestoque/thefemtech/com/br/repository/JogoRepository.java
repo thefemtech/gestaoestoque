@@ -4,6 +4,4 @@ import org.springframework.data.repository.CrudRepository;
 
 import gestaoestoque.thefemtech.com.br.model.Jogo;
 
-public interface JogoRepository extends CrudRepository<Jogo, Integer>{
-
-}
+public interface JogoRepository extends CrudRepository<Jogo, Integer>{}
